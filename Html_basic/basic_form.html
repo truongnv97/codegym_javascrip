@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        width: 30%;
+        margin-left: 50px;
+        padding: 12px;
+        background-color: #ddd;
+    }
+    p, h2{
+        margin: 16px 0 8px;
+        font-weight: 600;
+    }
+    select, #gmail{
+        min-width: 50%;
+    }
+    button{
+        margin: 12px 0 0;
+    }
+</style>
+<body>
+    
+    <form method="get" action="basic_form.html">
+        <h2>Oder Form</h2>
+        <p>What do you want to buy?</p>
+        <select name="Product" id="">
+            <option value="A">A</option>
+            <option value="B(+  0.5$)">B(+  0.5$)</option>
+            <option value="C(+  0.5$)">C(+  0.5$)</option>
+        </select>
+        <p>How many would you like to oder?</p>
+        <input type="radio" name="cost" id="plan_1">
+        <label for="plan_1">1 - $10</label>
+        <br>
+        <input type="radio" name="cost" id="plan_2">
+        <label for="plan_2">2 - $20</label>
+        <br>
+        <input type="radio" name="cost" id="plan_3">
+        <label for="plan_3">3 - $25</label>
+        <p>Name     <span style="color: red;">*</span></p>
+        <input type="text" name="First_name" id="" placeholder="Firstname">
+        <input type="text" name="Last_name" id="" placeholder="Lastname">
+        <p>Email</p>
+        <input type="email" name="gmail" id="gmail">
+        <p>Phone</p>
+        <input type="text" name="" id="" size="5"> -
+        <input type="text" name="" id="" size="5"> -
+        <input type="text" name="" id="" size="5">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
