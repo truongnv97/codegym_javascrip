@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add child</title>
+</head>
+<style>
+    #div1{
+        height: 400px;
+        width: 800px;
+        background-color: green;
+        border: 20px solid pink;
+        /* position: relative; */
+        top: 200px;
+        left: 200px;
+    }
+</style>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+</body>
+<script>
+    let div = document.getElementById("div2");
+    let button = document.createElement("input");
+    button.value = "click me";
+    button.type = "button";
+    div.appendChild(button);
+    document.getElementById("div1").style.position = "relative";
+</script>
+</html>

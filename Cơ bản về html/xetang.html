@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin-left: 200px;
+    }
+
+    div {
+        margin-bottom: 30px;
+        width: 400px;
+        height: 400px;
+        border: 5px solid pink;
+    }
+
+    /* #love {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        top: 200px;
+        left: 200px;
+    } */
+
+    button {
+        font-size: 18px;
+        padding: 8px 16px;
+        margin-right: 16px;
+    }
+</style>
+
+<body>
+    <div>
+        <img id="love" src="https://thuthuatnhanh.com/wp-content/uploads/2019/04/anh-cute.jpg" alt="" style="position: relative; width: 40px;height: 40px;top: 200px;left: 200px;">
+
+    </div>
+    <button onclick="toplove();">top</button>
+    <button onclick="rightlove();">right</button>
+    <button onclick="bottomlove();">bottom</button>
+    <button onclick="leftlove();">left</button>
+
+</body>
+<script>
+
+    function toplove(){
+        let top = parseInt(document.getElementById("love").style.top)
+        document.getElementById("love").style.top = (top - 20) + "px"
+    }
+    function rightlove(){
+        let right =parseInt(document.getElementById("love").style.left)
+        document.getElementById("love").style.left = (right + 20) + "px"
+    }
+    function bottomlove(){
+        let bottom = parseInt(document.getElementById("love").style.top)
+        document.getElementById("love").style.top = (bottom + 20) + "px"
+    }
+    function leftlove(){
+        let left = parseInt(document.getElementById("love").style.left)
+        document.getElementById("love").style.left = (left - 20) + "px"
+    }
+</script>
+
+</html>
