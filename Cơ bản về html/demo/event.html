@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+    width: 200px;
+    height: 200px;
+    color: green;
+    }
+</style>
+<body>
+    <button onclick="demo()">Click</button>
+    <input type="text" onchange="demo1()" oninput="demo1()">
+    <div id="div2"  onmouseover="demo2()"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, necessitatibus fuga temporibus a voluptates eos et odit fugit officiis voluptatibus. Est sapiente impedit animi? Excepturi cupiditate aliquid optio ratione neque?</div>
+    <div id="div3" onmouseout="demo3()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cumque sapiente dolores, sed ullam tempora animi pariatur perferendis facere? Exercitationem pariatur beatae quasi voluptates autem odit qui officia accusamus dicta?</div>
+</body>
+</html>
+<script>
+ 
+    function demo(){
+        console.log("Hello World");
+        document.getele
+    }
+    function demo1(){
+        alert("Hello World");
+    }
+    function demo2(){
+        document.getElementById("div2").style.color = "red";
+    }
+    function demo3(){
+        document.getElementById("div3").style.color = "blue";
+    }
+    
+</script>

@@ -1,3 +1,1 @@
-BEGIN
-    DISPLAY 'Hello World!'
-END
+alert
