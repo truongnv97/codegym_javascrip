@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test switch</title>
+</head>
+
+<body>
+  <p>Nhập vào bên dưới 1 loại game mà bạn yêu thích</p>
+  <p>Ví dụ: CF, League of legend, AOE,Genshin impact,... </p>
+  <input type="text" name="" id="game">
+  <button type="button" onclick="functions();">Click</button>
+  <p id="describe"></p>
+</body>
+<script>
+  function functions() {
+    var text;
+    var game = document.getElementById("game").value;
+    switch (game) {
+      case "CF":
+        text = "CF là game bắn súng rất hay";
+        break;
+      case "League of legend":
+        text = "Đây là game đồng đội rất được ưa chuộng hiện nay";
+        break;
+      case "AOE":
+        text = "Là game đế chế cổ xưa hot 1 thời";
+        break;
+        default:
+          text = "Nằm ngoài pham vi tính toán";
+  }
+  document.getElementById("describe").innerHTML = text;
+  }
+</script>
+
+</html>
