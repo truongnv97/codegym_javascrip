@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm thi đại học</title>
+    <style>
+        label {
+            width: 120px;
+            line-height: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Tính điểm đại học khối D</h3>
+    <table>
+        <tr>
+            <td> <label for="math">Môn Toán</label>
+            </td>
+            <td> <input type="text" name="math" id="math">
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="lit">Môn Văn</label>
+            </td>
+            <td> <input type="text" name="lit" id="lit">
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="eng">Môn Anh</label>
+            </td>
+            <td> <input type="text" name="eng" id="eng">
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="area">Khu vực</label>
+            </td>
+            <td><select name="area" id="area">
+                    <option value="KV1">KV1</option>
+                    <option value="KV2-NT">KV2-NT</option>
+                    <option value="KV2">KV2</option>
+                    <option value="KV3">KV3</option>
+                </select></td>
+        </tr>
+    </table>
+    <button onclick="functions()">Tính điểm</button>
+    <p id="sum"></p>
+
+
+</body>
+<script>
+    function functions() {
+        let math = +document.getElementById("math").value;
+        let lit = +document.getElementById("lit").value;
+        let eng = +document.getElementById("eng").value;
+        let area = document.getElementById("area").value;
+        let add;
+        switch (area) {
+            case "KV1":
+                add = 0.75;
+                break;
+            case "KV2-NT":
+                add = 0.5;
+                break;
+            case "KV2":
+                add = 0.25;
+                break;
+            case "KV3":
+                add = 0;
+                break;
+        }
+        let sum = math + lit + eng + add;
+        document.getElementById("sum").innerHTML ="Tổng điểm là: " + sum;
+    }
+</script>
+
+</html>

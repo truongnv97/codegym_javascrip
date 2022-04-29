@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy đổi tiền tệ</title>
+</head>
+<style>
+    td,
+    th {
+        padding: 4px 16px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From currency</th>
+            <th>To currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" name="" id="amount" placeholder="Input amount money"></td>
+            <td>
+                <select name="" id="from">
+                    <option value="23000">VNĐ</option>
+                    <option value="1">Usd</option>
+                    <option value="0.95">Euro</option>
+                    <option value="130">Yên</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="to">
+                    <option value="23000">VNĐ</option>
+                    <option value="1">Usd</option>
+                    <option value="0.95">Euro</option>
+                    <option value="130">Yên</option>
+                </select>
+            </td>
+            <td><button onclick="functions()">Convert</button></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: left;">
+                <p id="result"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    function functions() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+
+        /*
+        let front, behind;
+        switch (from) {
+            case "vnd":
+                front = 22954.69;
+                break;
+            case "usd":
+                front = 1;
+                break;
+            case "yen":
+                front = 130;
+                break;
+            case "euro":
+                front = 0.95;
+                break;
+        }
+        switch (to) {
+            case "vnd":
+                behind = 22954.69;
+                break;
+            case "usd":
+                behind = 1;
+                break;
+            case "yen":
+                behind = 130;
+                break;
+            case "euro":
+                behind = 0.95;
+                break;
+        }
+
+        let result = ((behind / front) * amount).toFixed(3);
+        document.getElementById("result").innerHTML = amount +" ("+ from + ") = " + result + " (" + to +")";
+        */
+        let result = ((to / from) * amount);
+        document.getElementById("result").innerHTML = result;
+        
+    }
+</script>
+
+</html>

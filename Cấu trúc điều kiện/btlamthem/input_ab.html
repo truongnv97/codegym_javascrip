@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        margin: auto;
+    }
+
+    input {
+        margin-bottom: 16px;
+    }
+</style>
+
+<body>
+    <div>
+        <h3>Nhập vào các giá trị a, b, c</h3>
+        <input type="text" id="a" placeholder="Nhập a">
+        <br>
+        <input type="text" id="b" placeholder="Nhập b">
+        <br>
+        <input type="text" id="c" placeholder="Nhập c">
+        <br>
+        <button onclick="functions()">Tính toán</button>
+        <p>Chu vi và diện tích của hình vuông cạnh a là: <span id="square"></span></p>
+        <p>Bình phương của a và b lần lượt là: <span id="sqr"></span></p>
+        <p>Tổng các số từ a đến b là: <span id="sum-fatb"></span></p>
+        <p>Thế kỷ: <span id="century"></span></p>
+        <p>Tam giác <span id="triangle"></span></p>
+    </div>
+</body>
+<script>
+    function functions() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        // tính chu vi và diện tích hình vuông cạnh a
+        document.getElementById("square").innerHTML = 4 * a + ";" + Math.pow(a,2) + ".";
+        // Tính bình phương của a và b
+        document.getElementById("sqr").innerHTML = Math.pow(a,2) + ";" + Math.pow(b,2) + ".";
+        // Tính tổng các số từ a đến b
+        if (a >= b) {
+            document.getElementById("sum-fatb").innerHTML = a - b + 1;
+        } else {
+            document.getElementById("sum-fatb").innerHTML = b - a + 1;
+        }
+        // tính thế kỉ từ số nhập vào
+        let century = parseInt((a/100) + 1).toFixed(0);
+        document.getElementById("century").innerHTML = century;
+    }
+</script>
+
+</html>

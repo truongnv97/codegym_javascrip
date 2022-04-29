@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đo chỉ số BMI</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let weight = +prompt("Input your weight (Kg)");
+    let height = ((+prompt("Input your height (Cm)")) / 100) ** 2;
+    let BMI = weight / height;
+    let text;
+    if (BMI < 16) {
+        text = "Gầy độ 3"
+    } else if (16 <= BMI && BMI < 17) {
+        text = "Gầy độ 2"
+    } else if (17 <= BMI && BMI < 18.5) {
+        text = "Gầy độ 1"
+    } else if (18.5 <= BMI && BMI < 25) {
+        text = "Bình thường"
+    } else if (25 <= BMI && BMI < 30) {
+        text = "Thừa cân"
+    } else if (30 <= BMI && BMI < 35) {
+        text = "Béo phì độ 1"
+    } else if (35 <= BMI && BMI < 40) {
+        text = "Béo phì độ 2"
+    } else {
+        text = "Béo phì độ 3"
+    } 
+    alert(text);
+</script>
+
+</html>

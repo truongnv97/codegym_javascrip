@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day per month</title>
+
+</head>
+
+<body>
+    <h3>Nhập vào số thứ tự của tháng</h3>
+    <input type="text" name="" id="month">
+    <button onclick="functions()">Tra cứu</button>
+    <p id="dpm"></p>
+</body>
+<script>
+    function functions() {
+        let month = +document.getElementById("month").value;
+        let text;
+
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                text = "31 ngày";
+                break;
+            case 2:
+                text = "28 hoặc 29 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                text = "30 ngày";
+                break;
+            default: "Tháng không tồn tại"
+        }
+        document.getElementById("dpm").innerHTML = "Số ngày có trong tháng " + month + " là: " + text;
+    }
+
+</script>
+
+</html>
