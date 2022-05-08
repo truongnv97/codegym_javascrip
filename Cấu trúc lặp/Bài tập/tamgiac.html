@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ tam giác vuông</title>
+</head>
+<body>
+    <p style="width: fit-content;">s</p>
+</body>
+<script>
+
+    // dùng lệnh repeat và css
+    let i, j;
+    let a = 1;
+    let table1 = '<p>';
+    let table2 = '<p>';
+    let table3 = '<p style="text-align: right;width: fit-content;">';
+    let table4 = '<p style="text-align: right;width: fit-content;">';
+    //table 1
+    for (i = 1; i < 6; i++) {
+        table1 +=  "*".repeat(i) + "<br>";
+    }
+    table1 += "</p>"
+
+    //table 2
+    for (i = 5; i > 0; i--) {
+        table2 +="*".repeat(i) + "<br>";
+    }
+    table2 += "</p>"
+
+    //table 3
+    for (i = 1; i < 6; i++) {
+        table3 +="*".repeat(i) + "<br>";
+    }
+    table3 += "</p>"
+
+
+    //table 4
+    for (i = 5; i > 0; i--) {
+        table4 +=  "*".repeat(i) + "<br>";
+    }
+    table4 += "</p>"
+    document.write(table1);
+    document.write(table2);
+    document.write(table3);
+    document.write(table4);
+
+    /// dùng &ensp; và for lặp
+    let data = ""
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+
+    data += "<br>"
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+
+    data += "<br>"
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j < i; j++) {
+            data += "&ensp;"
+        }
+        for (let j = 1; j <= (6 - i); j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+
+    data += "<br>"
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 0; j < (5 - i); j++) {
+            data += "&ensp;"
+        }
+        for (let j = 1; j <= i; j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+    document.write(data)
+</script>
+
+</html>

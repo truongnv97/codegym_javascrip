@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dãy fibonaci có số đầu tiên chia hết cho 5</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let x = 0, y = 1, i;
+    let a = x + y;
+    let n =""
+    //hiển thị số đầu tiên chia hết cho 5
+    /*  while(a % 5 !=0){
+          a=x+y;
+          x=y;
+          y=a;
+      }
+      alert(a)
+      */
+
+    //hiển thị tât cả các số chia hết cho 5 vào nhỏ hơn 10000;
+    while (a < 10000) {
+        a = x + y;
+        x = y;
+        y = a;
+        if(a%5==0){
+            n+=a+" "
+        }
+    }
+    document.write(n)
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vòng lắp do while</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //vì do nàm trc while nên vòng lặp do while ít nhất đc thực hiện 1 lần cho dùng nhaapj vào giá trị 0 lần đầu tiên
+    var sum = 0;
+    var number;
+    do{
+        number = parseInt(prompt("enter number "));
+        sum +=number;
+    } while(number!=0);
+    document.write("Sum is: " + sum)
+</script>
+</html>

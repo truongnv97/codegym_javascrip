@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng các số trong khoảng từ a đến b</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    debugger
+    let a = parseInt(prompt("Nhập vào a!"));
+    let b = parseInt(prompt("Nhập vào b!"));
+    // let sum1 =(a+b) * (Math.abs(a-b)/1+1)/2;
+    let sum =0;
+    let text = "Tổng là: ";
+
+    // sử dụng vòng lặp for
+    if (a == b) {
+        alert(text + a)
+    } else if (a < b) {
+        for (a; a <= b; a++) {
+            sum+=a;
+        }
+        alert(text+sum);
+    }else{
+        for (b; b <= a; b++) {
+            sum+=b;
+        }
+        alert(text+sum);
+    }
+
+    //sử dụng hàm toán học thông thường
+//    alert(sum1);
+</script>
+
+</html>

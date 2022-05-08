@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng các số tới số nhập vào</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let num = +prompt("Nhập vào số bất kì lớn hơn 0!");
+    let total=0;
+    if (num > 0) {
+        for (let i = 0; i <= num; i++) {
+            total+=i;
+        }
+        alert("Tổng các phần tử vừa nhập là: " + total)
+    } else{
+        alert("số vừa nhập không thỏa mãn")
+    }
+
+</script>
+
+</html>

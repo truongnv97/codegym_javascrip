@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị nhiệt độ</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let temp ;
+    do{
+        temp = prompt("Nhập nhiệt độ")
+        if(temp<20){
+            alert("Tăng nhiệt độ")
+        } else if(temp>100){
+            alert("Giảm nhiệt độ")
+        }  
+    }
+    while(20>temp || temp>100);
+    alert("Nhiệt độ" + temp)
+        
+</script>
+</html>

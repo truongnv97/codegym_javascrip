@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi con số</title>
+</head>
+<body>
+    <h3>Mô tả trờ chơi</h3>
+    <p>Khi bạn nhấp vào ô chữ bắt đầu sẽ xuất hiện của sổ và bạn sẽ nhập vào giá trị lớn nhất trong khoảng mà bạn muốn chơi. <br>
+        Sau khi nhập xong bạn nhập tiếp số mà mk dự đoán (từ 1 đến số lớn nhất bạn nhập), nếu sai bạn có cơ hội nhập lại 2 lần.</p>
+    <button onclick="functions()">Bắt đầu</button>
+</body>
+<script>
+    function functions(){
+        let max = +prompt("Nhập vào số lớn nhất bạn muốn!");
+        let random = Math.floor(Math.random() * max)+1;
+        let num;
+        let count=0
+
+        //dùng for
+
+        // for (let i=1; i<=3;i++){
+        //     num = +prompt("Nhập vào số  bạn muốn dự đoán!");
+        //     if(num===random){
+        //         alert("bingo")
+        //         break;
+        //     }
+        //     if(num<random){
+        //         alert("Số bạn cần nhập có giá trị lớn hơn ")
+        //     }
+        //     else{
+        //         alert("Số bạn cần nhập có giá trị nhỏ hơn ")
+        //     }
+        // }
+        // dùng while
+        do{
+            num = +prompt("Nhập vào số  bạn muốn dự đoán!");
+            if(num!=random && count ==2){
+                alert("you fail");
+                break;
+            }
+            else if(num>random && count<2){
+                alert("Số bạn cần nhập có giá trị nhỏ hơn ");
+                count +=1;
+            }
+            else if(num<random && count<2){
+                alert("Số bạn cần nhập có giá trị lớn hơn ")
+                count +=1;
+            }
+            else{
+                alert("bingo")
+                break;
+            }
+        }while(count<3)
+    }
+</script>
+</html>

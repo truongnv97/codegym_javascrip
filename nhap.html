@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nháp</title>
+    <title>Document</title>
 </head>
+
 <body>
-    
+    <input type="text" id="data">
+    <button onclick="add()">Add data</button>
+    <div id="result"></div>
 </body>
 <script>
-    let a = 5, b= 6;
-     b **= a;
-    document.write(b);
-    document.write(a);
+    let arr = [];
+    function add() {
+            let data = document.getElementById("data").value;
+            arr.push(data);
+            show();
+    }
+    function show(){
+        let result = "";
+        for (let i = 0; i < arr.length; i++){
+result+="Element " + (i+1) +"="+arr[i]+"<br>";
+        }
+        document.getElementById("result").innerHTML = result;
+        document.getElementById("data").value = ""
+    }
 </script>
+
 </html>
-
-<!-- <h3>Hãy điền tên vào ô nhập bên dưới</h3>
-
-    <input id="myName" type="text"></input>
-
-    <button type="button" onclick="getValue()">Hiển thị tên</button>
-    <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, omnis accusantium eveniet cupiditate
-        accusamus natus reprehenderit id. Blanditiis, voluptatem dolor explicabo, alias nobis, perferendis dolorum
-        tenetur error molestias exercitationem repudiandae?</p>
-
-    <script>
-        function getValue() {
-            let content = document.getElementById("demo").innerHTML;
-            document.getElementById("myName").value = content;
-        } 
-    </script>   -->

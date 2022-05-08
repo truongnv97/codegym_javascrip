@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In ra dãy fibonaci</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    let i=3;
+    var x=0, y=1;
+    let fib= "0, 1"
+    let n=+prompt("Nhập vào số phần tử n")
+    let a;
+   while (i++<=n){
+     a = x+y ;
+     fib +=", "+a 
+    x = y ;
+    y = a;
+    
+   }
+   document.write(fib)
+     
+</script>
+</html>

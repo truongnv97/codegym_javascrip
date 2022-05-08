@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng 1 chiều</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var fruits = [
+        ["Banana", "Apple", "Grapes"],
+        ["chuối","táo","nho"]
+    ]
+    var infor = {
+        name: "trường",
+        middle_name: "văn",
+        family_name: "Nguyễn"
+    }
+
+    // Hiển thị cả mảng fruits 1 chiều
+
+    // for (let i = 0; i<fruits.length;i++) {
+    //  console.log("position =" + i + " is" +fruits[i] );
+    // }
+
+    // hiển thij mảng frui 2 chiều
+    for (let i = 0; i< fruits.length; i++){
+        for (let j = 0; j < fruits[i].length; j++){
+            document.write(fruits[i][j] + "<br>")
+            // console.log("position =" + i + " is" +fruits[i][j] );
+        }
+    }
+
+    // //hiển thị 1 phần tử
+    // console.log("position =" + fruits[1]);
+    // console.log(infor.family_name);
+    // document.write(infor.family_name + "<br>");
+    // document.write("position =" + fruits[1]);
+</script>
+
+</html>
