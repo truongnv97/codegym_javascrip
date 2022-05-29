@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng các số nguyên tố nhỏ hơn 500</title>
+</head>
+
+<body>
+    <p>Nhập vào giới hạn số lớn nhất</p>
+    <input type="text" id="number">
+    <button onclick="getNumber()">Tính tổng</button>
+    <p id="numDisplay"></p>
+</body>
+<script>
+    function isPrice(number) {
+        if (number < 2) {
+            return false
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+    function getNumber() {
+        let value = +document.getElementById("number").value;
+        let arr = Array()
+        let sum = 1;
+
+        for (let count = 0; count < value; count++) {
+            arr[count] = count;
+        }
+        for (let value of arr) {
+            if (isPrice(value)) {
+                sum += value
+                console.log(value);
+            }
+        }
+        console.log(arr);
+        document.getElementById("numDisplay").innerHTML = "Tổng của các số nguyên tố trong mảng là " + sum
+    }
+</script>
+
+</html>

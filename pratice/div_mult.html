@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide and multiply</title>
+</head>
+<style>
+    input, button{
+        margin: 0 16px 12px;
+        padding: 4px;
+    }
+   
+</style>
+<body>
+    <input type="text" id="value1" placeholder="Text here  for number 1">
+    <br>
+    <input type="text" id="value2" placeholder="Text here for number 2">
+    <br>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divice()">Divice</button>
+    <p id="result"></p>
+</body>
+<script>
+    let result = 0
+    function multiply(){
+        let num1 = +document.getElementById("value1").value
+        let num2 = +document.getElementById("value2").value
+        result = num1 * num2
+        document.getElementById("result").innerHTML = result
+    }
+    function divice(){
+        let num1 = +document.getElementById("value1").value
+        let num2 = +document.getElementById("value2").value
+        result = num1 / num2
+        document.getElementById("result").innerHTML = result
+    }
+</script>
+</html>

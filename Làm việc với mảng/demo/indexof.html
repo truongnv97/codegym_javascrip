@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm indexOf</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = "Nguyễn Văn Trường"
+    var b = ["anh", "nhớ", "em", "nhiều", "lắm"]
+    var c = [1,2,3,4,5,6]
+    var d = a.indexOf("n", 4) // tìm kiếm giá trị n từ vị trí thứ 4
+    var e = b.indexOf("lắm") 
+    var f = c.indexOf(3)
+    
+    console.log("mảng d:" +d); // khi cắt chuỗi thì indexof sẽ cắt ra vị trí của ""
+    console.log("mảng e:" + e); // khi cắt mảng thì sẽ chỉ ra vị trí của các chuỗi trong mảng, nếu sai thì sẽ trả về -1
+    console.log("mảng f:" + f);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+</script>
+</html>

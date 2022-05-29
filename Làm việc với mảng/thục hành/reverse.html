@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược mảng</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    debugger
+    let arr = [4, 5, 4, 6, 1, 6]
+    //dùng hàm reverse
+    // document.write(arr.reverse());
+    let first = 0
+    let last = arr.length - 1
+    while (first < last) {
+        let swap = arr[first]
+        arr[first]=arr[last]
+        arr[last] = swap
+        first++
+        last--
+    }
+    document.write(arr)
+</script>
+
+</html>

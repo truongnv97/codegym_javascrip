@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm concat</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var fruit = ["banana"];
+    var hoa_qua = ["chuoi"];
+    var c = fruit.concat("conac", 0, hoa_qua);// ngoài việc thêm mảng ta có thể thêm các phần tử khác bằng việc chèn thêm dấu phảy giữa các phần tử
+    console.log(c);
+
+    var student1 = [
+        {
+            id: 99
+        },
+        {
+            name: "truong"
+        },
+        {
+            age: 24
+        }
+    ]
+    var student2 = [
+        {
+            id: 98
+        },
+        {
+            name: "huan"
+        },
+        {
+            age: 24
+        }
+    ]
+ 
+    var couple = student1.concat(student2);
+    console.log(couple);
+</script>
+
+</html>

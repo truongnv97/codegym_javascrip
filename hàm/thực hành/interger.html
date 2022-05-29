@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số nguyên tố</title>
+</head>
+
+<body>
+    <input type="text" name="" oninput="interger(this.value)" id="number" placeholder="Text the number">
+    <p id="disPlay"></p>
+</body>
+<script>
+    function interger(value) {
+        value = parseFloat(value)
+        let flag = true;
+        if(value <=0){
+            document.getElementById("disPlay").innerHTML = value + " không là số nguyên tố"
+        } else{
+            for (let i = 2; i < value; i++) {
+                if (value % i == 0) {
+                    flag = false
+                    break;
+                }
+            }
+            if (flag) {
+                document.getElementById("disPlay").innerHTML = value + " là số nguyên tố"
+            } else
+                document.getElementById("disPlay").innerHTML = value + " không là số nguyên tố"
+        }
+    }
+    // function interger(value) {
+    //     value = parseFloat(value)
+    //         for (let i = 2; i < value; i++) {
+    //             if (value % i === 0) {
+    //                 document.getElementById("disPlay").innerHTML = value + " không là số nguyên tố"
+    //                 break;
+    //             }else{
+    //                 document.getElementById("disPlay").innerHTML = value + " là số nguyên tố"
+    //             }
+    //         }
+    //     }
+
+
+</script>
+
+</html>

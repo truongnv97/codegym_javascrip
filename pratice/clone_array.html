@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone an Array</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Solution 1 sử dụng slide nhưng ko cắt vị trí nào
+    var array_Clone = function (array1) {
+        return array1.slice(0);
+    };
+    console.log(array_Clone([1, 2, 4, 0]));
+    console.log(array_Clone([1, 2, [4, 0]]));
+
+
+
+    let x = [0, 1, 2, 3, 4, "banana"];
+    console.log("Original array:")
+    console.log(x)
+
+    // Solution 2 đặt biến trung gian trực tiếp
+    let y = [...x];
+    console.log("Clone of the said array:")
+    console.log(y)
+
+    // Solution 3 sử dụng from trả về một mảng từ bất kì đối tượng có độ dài nào cho trước
+    let b = Array.from(x);
+    console.log("Clone of the said array:")
+    console.log(b)
+
+    // Solution 4 sử dụng slice
+    let c = x.slice();
+    console.log("Clone of the said array:")
+    console.log(c)
+
+    // Solution 5 sử dụng hàm map: ??
+    let a = x.map(i => i);
+    console.log("Clone of the said array:")
+    console.log(a)
+
+    // Solution 6 filter trả về giá trị của 1 mảng dựa trên kết quả lọc, k làm thay đổi mảng gốc. arr.filter(điều kiện)
+    let d = x.filter(() => true);
+    console.log("Clone of the said array:")
+    console.log(d)
+
+
+
+    // cắt chuỗi với điều kiện từ giá trị first đến vị trí n
+    var first = function (array, n) {
+        if (array == null)
+            return void 0;
+        if (n == null)
+            return array[0];
+        if (n < 0)
+            return [];
+        return array.slice(0, n);
+    };
+    console.log(first([7, 9, 0, -2]));
+    console.log(first([], 3));
+    console.log(first([7, 9, 0, -2], 3));
+    console.log(first([7, 9, 0, -2], 6));
+    console.log(first([7, 9, 0, -2], -3));
+
+    // cắt chuoix với điều kiện từ vị trí n đến vị trí cuối
+    var last = function (array, n) {
+        if (array == null)
+            return void 0;
+        if (n == null)
+            return array[array.length - 1];
+        return array.slice(Math.max(array.length - n, 0)    );
+    };
+
+    console.log(last([7, 9, 0, -2]));
+    console.log(last([7, 9, 0, -2], 3));
+    console.log(last([7, 9, 0, -2], 2));
+    console.log(last([7, 9, 0, -2], 6));
+
+
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm splice</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //sử dụng hàm splice để xóa 1 phần tử trong mảng
+    // splice(vị trí bắt đầu xóa,số phần tử muốn xóa) 
+    var arr = ["nguyen","van","truong"];
+    console.log(arr);
+    arr.splice(1,arr.length); //xóa hết phần tử sau vị trí 1
+    console.log(arr);
+    /////
+
+    var student=[
+        {
+            id: 113,
+            name: "john",
+            age:24
+        },
+        {
+            id:114,
+            name: "cat",
+            age:19
+        }
+    ]
+    console.log(student);
+    for(let i=0;i<student.length;i++){
+        if(student[i].age==19){
+            student.splice(i,1);
+        }
+    }
+    console.log(student);
+</script>
+</html>

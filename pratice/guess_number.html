@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đếm từ 1 đến 100</title>
+    <title>Guess number from 1 to 10</title>
 </head>
 <body>
     
 </body>
 <script>
-    let i=1;
-    for(i;i<=100;i++){
-        if (i==99){
-            document.write("Hoàn thành");
-            break;
-        }
-    }
-    console.log(i);
+    const number = Math.floor(Math.random()*10)
+    console.log(number);
+    let input = +prompt("Nhập vào số từ 1 đến 10");
+    (number === input) ? console.log("match") : console.log("Not match");
 </script>
 </html>

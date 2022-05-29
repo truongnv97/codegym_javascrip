@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng các số nguyên tố trong mảng</title>
+</head>
+
+<body>
+    <p>Nhập vào số lượng của mảng</p>
+    <input type="text" id="number">
+    <button onclick="getNumber()">Tính tổng</button>
+    <p id="numDisplay"></p>
+</body>
+<script>
+    // cách 1 sử dụng true false trực tiếp
+
+    // function getNumber() {
+    //     let value = +document.getElementById("number").value;
+    //     let arr = Array()
+    //     let sum = 0;
+    //     for (let count = 0; count < value; count++) {
+    //         arr[count] = Math.floor(Math.random() * 101)
+    //         let flag = true;
+    //         for (let i = 2; i < arr[count]; i++) {
+    //             if (arr[count] % i == 0) {
+    //                 console.log(arr[count]);
+    //                 flag = false
+    //                 break;
+    //             }
+    //         }
+    //         if (flag) {
+    //             sum += arr[count]
+    //         }
+
+    //     }
+    //     console.log(arr);
+    //     document.getElementById("numDisplay").innerHTML = "Tổng của các số nguyên tố trong mảng là " + sum
+    // }
+
+    // cach 2 sử dụng ham trung gian 
+    function getArray() {
+        let value = +document.getElementById("number").value;
+        let arr = Array()
+        for (let count = 0; count < value; count++) {
+            arr[count] = Math.floor(Math.random() * 101)
+        }
+        console.log(arr);
+        return arr;
+    }
+
+    function isPrice(number) {
+        if (number < 2) {
+            return false
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+
+    function getNumber() {
+        let arr = getArray();
+        let sum = 0;
+        for (let value of arr) {
+            if (isPrice(value)) {
+                sum += value;
+            }
+        }
+        console.log(arr);
+        document.getElementById("numDisplay").innerHTML = "Tổng của các số nguyên tố trong mảng là " + sum
+    }
+</script>
+
+</html>

@@ -10,10 +10,28 @@
     
 </body>
 <script>
+    // let i;
+    // for(i=1;i<=100;i++){
+    //     if(i%15==0){
+    //         console.log("FizzBuzz");
+    //         continue
+    //     }else if(i%3==0){
+    //         console.log("Fizz");
+    //         continue;
+    //     } else if(i%5==0){
+    //         console.log("Buzz");
+    //         continue;
+    //     }
+    //     console.log(i);
+    // }
+
+    //
     let i;
+    let data = '<table width="800" border="1" cellspacing="0" cellpadding="5" style="text-align: center;">'
     for(i=1;i<=100;i++){
+        data +="<tr>"
         if(i%15==0){
-            console.log("FizzBuzz");
+            data += "<td>"
             continue
         }else if(i%3==0){
             console.log("Fizz");
@@ -23,6 +41,8 @@
             continue;
         }
         console.log(i);
+        data +="</tr>"
+        
     }
 </script>
 </html>

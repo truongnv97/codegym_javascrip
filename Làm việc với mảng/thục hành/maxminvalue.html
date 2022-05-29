@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm giá trị nhỏ nhất hoặc lớn nhất trng dãy số</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var nums = [];
+    for(var i=0;i<100;++i){
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+    
+    let min_p, max_p;
+    // tìm min
+    function minfunction(nums){
+        let min = nums[0];
+        for(let i=1; i<nums.length; i++){
+        if(min > nums[i]){
+            min=nums[i] 
+            min_p=i
+        }
+    }
+    return min
+}
+// tìmmax
+function maxfunction(nums){
+    let max = nums[0]
+    for(let i=1; i<nums.length; i++){
+        if(max < nums[i]){
+            max=nums[i] 
+            max_p=i
+        }
+    }
+    return max
+}
+function dispArr(nums) {
+      for (var i = 0; i < arr.length; ++i) {
+         putstr(nums[i] + " ");
+         if(i%10==9){
+             putstr("\n");
+         }
+      }
+      if(i%10!=0){
+         putstr("\n");
+      }
+}
+document.write(nums.join(" "))
+document.write("<br>")
+document.write("Số nhỏ nhất là " + minfunction(nums) + " có vị trí " + min_p )
+document.write("<br>")
+document.write("Số nhỏ nhất là " + maxfunction(nums) + " có vị trí " + max_p )
+
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range converter</title>
+</head>
+<style>
+    #coverRange {
+        display: inline;
+    }
+
+    span,
+    button {
+        border: thin solid #ccc;
+        padding: 4px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <input type="text" name="" id="value" oninput="getValue(this.value)">
+    <button onclick="footToMeter()">Foot to meter</button>
+    <button onclick="meterToFoot()">Meter to foot</button>
+    <p id="result"></p>
+
+</body>
+<script>
+
+    //     function footToMeter(foot) {
+    //         let meter = 0.305 * foot;
+    //         return meter
+    //     }
+    //     function meterToFoot(meter) {
+    //         let foot = 3.279 * meter
+    //         return foot
+    //     }
+    //     function getValue(value) {
+    // document.getElementById("result").innerHTML = value + " meter is " + footToMeter(value) + " foot. <br>" + value + " foot is " + meterToFoot(value) + " meter."
+    //     }
+
+    function footToMeter() {
+        let foot = document.getElementById("value").value
+        document.getElementById("result").innerHTML = foot + " foot is " + 3.279 * foot + " meter."
+    }
+    
+    function meterToFoot() {
+        let meter = document.getElementById("value").value
+        document.getElementById("result").innerHTML = meter + " meter is " + 0.305 * meter + " foot."
+    }
+</script>
+
+</html>

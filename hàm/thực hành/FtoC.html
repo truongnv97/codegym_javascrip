@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit to Celcius</title>
+</head>
+<body>
+    <h3>Temperature Converter</h3>
+    <p>Text a Fahrenheit temperature</p>
+    <p>Fahrenheit <input type="text" name="" oninput="myFunctions(this.value)" onchange="myFunctions(this.value)"></p>
+    <p>Celcius: <span id="celDisplay"></span></p>
+</body>
+<script>
+function myFunctions(value) {
+    value = parseFloat(value);
+    document.getElementById("celDisplay").innerHTML = ((value-32) / 1.8).toFixed(2);
+}
+</script>
+</html>

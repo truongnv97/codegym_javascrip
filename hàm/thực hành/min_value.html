@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //sắp xếp dãy số
+
+    // let minValue = function(arr){
+    //     for(let i =0; i< arr.length; i++){
+    //         for(let j=0; j<arr.length -1; j++){
+    //             if(arr[j] > arr[j+1]){
+    //                let min = arr[j+1];
+    //                arr[j+1] = arr[j];
+    //                arr[j]= min;
+    //             }
+    //         }
+    //     }
+    //     return arr
+    // }
+    // console.log(minValue([6, 3, 7, 4, 5]));
+    // console.log(minValue([0, 0, 0, 0, 0]));
+    // console.log(minValue([2, 4, 1, 2, 6]));
+
+
+    // tìm min
+    let minValue = function (arr, pst) {
+        if (arr.length == 0) {
+            return("Ham rong");
+        }
+        let min = arr[0]
+        for (let i = 1; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+                pst= i;
+            }
+        }
+        return("Gía trị min là " + min + " tại vị trí " + pst);
+    }
+    console.log(minValue([6, 2, 7, 3, 5]));
+    // console.log(minValue([]));
+    // console.log(minValue([2, 4, 1, 2, 6]));
+</script>
+
+</html>

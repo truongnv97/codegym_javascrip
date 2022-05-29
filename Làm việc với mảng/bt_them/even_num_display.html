@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count event number </title>
+</head>
+
+<body>
+    <p>Nhập số lượng phần tử của mảng</p>
+    <input type="text" name="" id="value">
+    <button onclick="disPlay()">Get</button>
+    <p id="Display"></p>
+</body>
+<script>
+    function disPlay() {
+        let value = document.getElementById("value").value
+        let array = Array();
+        let evenNum = [],
+            count = 0,
+            position = "";
+        for (var i = 0; i < value; ++i) {
+            array[i] = Math.floor(Math.random() * 101);
+            if (array[i] % 2 == 0) {
+                evenNum.push(array[i]);
+                count++;
+                position += i;
+            }
+
+        }
+        document.getElementById("Display").innerHTML = (array.join(", ")) + "<br>" + "Even number is " + evenNum.join(", ") + "<br>" + "The number of even is " + count + "<br>" + "Even's position number is " + position
+
+    }
+
+</script>
+
+</html>

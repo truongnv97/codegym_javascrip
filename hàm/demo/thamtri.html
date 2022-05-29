@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truyen tham tri</title>
+</head>
+<body>
+    
+</body>
+<script>
+     function square(x) {
+            x = x * x;
+            return x
+        }
+        let y = 113;
+        square(y); // gioongd như là đổi biến x thành y, biến x ko thể gọi bên ngoài đc nữa
+        console.log(square(y)); 
+        console.log(y); // giá trị y ko thay đổi, nếu gọi trực tiếp ko qua y giá trị của x sẽ bị thay đổi 
+</script>
+</html>

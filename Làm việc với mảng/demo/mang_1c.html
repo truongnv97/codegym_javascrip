@@ -12,10 +12,26 @@
 
 </body>
 <script>
+    var arr = [1,"a",true, null, undefined]
+    for(let i; i<arr.length;i++){
+        console.log(arr[i])
+    }
+for (let index in arr) {
+    console.log("index"+index)
+}
+
+for (let index of arr) {
+    console.log("index"+index)
+}
+
+
+
+
+
     var fruits = [
         ["Banana", "Apple", "Grapes"],
         ["chuối","táo","nho"]
-    ]
+    ];
     var infor = {
         name: "trường",
         middle_name: "văn",
@@ -36,11 +52,11 @@
         }
     }
 
-    // //hiển thị 1 phần tử
-    // console.log("position =" + fruits[1]);
-    // console.log(infor.family_name);
-    // document.write(infor.family_name + "<br>");
-    // document.write("position =" + fruits[1]);
+    //hiển thị 1 phần tử
+    console.log("position =" + fruits[1]);
+    console.log(infor.family_name);
+    document.write(infor.family_name + "<br>");
+    document.write("position =" + fruits[1][0]);
 </script>
 
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra đối xứng</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPalindrome(s) {
+        s = prompt("Nhập vào một từ");
+        let string = Array.from(s);
+        let flag;
+        for(let j =0; j< string.length/2; j++){
+            if(string[j] == string[string.length -1 - j]){
+                flag = true;
+            }else{
+                flag=false
+                break
+            }
+        }
+        if(flag){
+            console.log("Chuỗi đối xứng");
+        } else{
+            console.log("Chuỗi không đối xứng");
+        }
+    }
+    isPalindrome()
+    // ar.substring(vị trí xóa, vị trí xóa, ...) để xóa chuỗi
+    // arr.charAt( vị trí a) trả về giá trị tại vị trí a
+</script>
+</html>

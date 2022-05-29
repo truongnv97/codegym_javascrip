@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị max trong mảng</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let numbers = [-3, 5, 7, 5, 9, 4, -12];
+    let max = numbers[0];
+    let position
+    for(let i=1;i<numbers.length;i++){
+        if(max<numbers[i]){
+            max=numbers[i]
+            position = i
+        }
+    }
+    document.write("giá trị lớn nhất là " +  max +" có vị trí " + position)
+
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button onclick="display()">Tìm kiếm</button>
+    <p id="display"></p>
+</body>
+<script>
+    
+    function display() {
+        
+        let value = +document.getElementById("input").value
+        let numbers = [-3, 5, 7, 5, 9, 4, -12];
+        let display =""
+        for (let i = 0; i < numbers.length; i++) {
+            if (value == numbers[i]) {
+                display += "Value " + numbers[i] + " found at " + i + "<br>";
+                // break;
+            }
+            else {
+                document.getElementById("display").innerHTML = "Value " + value + " not found" ;
+            }
+            document.getElementById("display").innerHTML = display;
+            document.getElementById("input").value = "";
+
+        }
+
+    }
+</script>
+
+</html>

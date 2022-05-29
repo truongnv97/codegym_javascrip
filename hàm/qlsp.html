@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí sản phẩm</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #wrap {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .boldText {
+        font-weight: 600;
+    }
+
+    #smallWrap {
+        width: fit-content;
+        padding: 24px;
+        background-color: rgb(242, 241, 241);
+        border-radius: 5px;
+    }
+
+    #product {
+        height: 32px;
+        width: 250px;
+        margin-right: 12px;
+        border: thin solid rgb(186, 182, 182);
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    button {
+        padding: 8px 12px;
+        color: #fff;
+        background-color: rgb(19, 155, 19);
+        border: thin solid #ddd;
+        border-radius: 3px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(even) {
+        background: #ddd;
+        height: 40px;
+        border: 1px solid #ddd;
+    }
+
+
+    #red {
+        color: red;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div class="addNewProduct">
+            <h2 class="boldText">Add new product</h3>
+                <div id="smallWrap">
+                    <input type="text" name="" id="product" placeholder="New product">
+                    <button onclick="addProduct()" id="add">Add</button>
+                </div>
+        </div>
+        <h2 class="boldText" style="text-align: center;">Display All Product</h2>
+        <div id="productDisplay"></div>
+    </div>
+
+</body>
+<script>
+    let products = ["nokia", "motorolar", "samsung", "iphone", "sony experia"]
+
+    function render() {
+        let data = "<table>";
+        data += "<tr><td style='text-align: center;'><b>STT</b></td><td><b>Product name</b></td><td></td><td id='red'>" + products.length + " Products" + "</td></tr>"
+        for (let i = 0; i < products.length; i++) {
+            data += "<tr>";
+            data += "<td style='text-align: center;'>" + (i + 1) + "</td>"
+            data += "<td>" + products[i] + "</td>";
+            data += "<td><button onclick='editProduct(" + i + ")'>Edit</button></td>";
+            data += "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>";
+            data += "</tr>"
+        }
+        data += "</table>";
+        document.getElementById("productDisplay").innerHTML = data
+    }
+    render();
+
+    function addProduct() {
+        let newProduct = document.getElementById("product").value;
+        products.push(newProduct);
+        document.getElementById("product").value = "";
+        render()
+    }
+
+    let indexEdit;
+    //edit vơi ô input
+    function editProduct(index) {
+        indexEdit = index;
+
+        document.getElementById("product").value = products[index];
+        document.getElementById("add").innerHTML = "Edit"
+        document.getElementById("add").setAttribute("onclick", "changeValueProductEdit()")
+    }
+    function changeValueProductEdit() {
+        let updateProduct = document.getElementById("product").value;
+        products[indexEdit] = updateProduct;
+        document.getElementById("product").value = "";
+        document.getElementById("add").innerHTML = "Add"
+        document.getElementById("add").setAttribute("onclick", "addProduct()");
+        render()
+    }
+
+    function deleteProduct(index) {
+        if (confirm("Bạn có muốn xóa san phẩm có tên: " + products[index] + "?")) {
+            products.splice(index, 1)
+        }
+        render();
+    }
+</script>
+
+</html>

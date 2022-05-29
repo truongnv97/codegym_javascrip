@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số ngày đến Christmas</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var today = new Date()
+    const ctm = new Date(today.getFullYear(), 11, 25);
+
+    if (today.getMonth() == 11 && today.getDate() >= 25) {
+        ctm.setFullYear(ctm.getFullYear() + 1)
+        //  today.getFullYear()+ 1;
+    }
+    var one_day = 1000 * 60 * 60 * 24;
+    console.log(Math.ceil((ctm.getTime() - today.getTime()) / (one_day)) +
+        " days left until Christmas!");
+
+
+
+    var cmt8 = new Date(1945, 7, 15)
+    const minute = 1000 * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+    const year = day * 365;
+    const daycount = Math.floor((today.getTime() - cmt8.getTime()) / (one_day));
+    const years = Math.floor(daycount / 365);
+    const months = Math.floor((daycount % 365) / 30)
+    const days = Math.floor((daycount - (years * 365) - (months*30)))
+
+    console.log(daycount);
+    console.log(years + " năm " + months + " tháng " + days +" ngày kể từ cách mạng tháng 8");
+    console.log((today.getFullYear() - cmt8.getFullYear())+ " Year " +(today.getMonth() - cmt8.getMonth()) + " Month "+(today.getDate() - cmt8.getDate())+
+        " days From cmt8 thành công");
+</script>
+
+</html>

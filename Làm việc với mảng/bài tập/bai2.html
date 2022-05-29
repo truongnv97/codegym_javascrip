@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm "-" vào giữa số chẵn</title>
+</head>
+
+<body>
+    <p>Nhập vào số bất kỳ</p>
+    <input type="text" id="number">
+    <button onclick="getNumber()">Get</button>
+    <p id="numDisplay"></p>
+</body>
+<script>
+    function getNumber() {
+        let value = document.getElementById("number").value;
+        let str = value.toString();
+        let result =[ str[0]];
+        for (let i = 1; i < str.length; i++) {
+            if ((str[i - 1] % 2 === 0) && (str[i] % 2 === 0)) {
+                result.push("-", str[i])
+            } else {
+                result.push(str[i])
+            }
+
+        console.log(result.join(''));
+    }
+    let newstr = result.join("");
+    document.getElementById("numDisplay").innerHTML = "dãy số nhập vào là " + str + "; <br>" + "dãy số mới sau khi chuyển đổi là " + newstr
+    }
+
+    // cách 2 sử dụng splice
+    // let arr = value.splice("")
+</script>
+
+</html>
