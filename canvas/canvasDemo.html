@@ -10,49 +10,139 @@
 
 <body>
     <canvas></canvas>
+
 </body>
 <script>
     const canvas = document.querySelector("canvas");
     const c = canvas.getContext("2d");
-    canvas.width = 1024;
+    canvas.width = 1444;
     canvas.height = 576;
     c.fillStyle = "yellow";
-    
+
     // đổ màu cho canvas
     // c.fillRect(0,0,canvas.width, canvas.height);
 
-    // điểm bắt đầu đường kẻ
-    c.moveTo(20, 30);
-    //điểm keetd thúc đường kẻ
-    c.lineTo(400, 30);
-    //gọi ra ddường kẻ
-    c.stroke()
+    function strokes() {
+        //************* Vẽ đường thẳng
+        // đổ màu cho đường thẳng
+        c.strokeStyle = "red"
+        c.beginPath()
+        // điểm bắt đầu đường kẻ
+        c.moveTo(20, 30);
+        //điểm keetd thúc đường kẻ
+        c.lineTo(400, 30);
+        c.stroke()
 
-    //vẽ hình chữ nhật 
-    //c.strokeRect(điểm bắt đầu của hcn trên trục x, điểm bắt đầu của hcn trên trục y,điểm kết thúc của hcn trên trục x, điểm kết thúc của hcn trên trục y ) điểm bắt đầu nằm ở góc phần tư thứ 1 và điểm kết thúc nằm ở góc phần tư thứ 4
-    c.strokeRect(50, 100, 300, 200)
-    //fill để đổ màu cho hình vẽ, màu đc thêm bên trên
-    c.fillRect(400, 100, 300, 200)
+        c.beginPath()
+        // điểm bắt đầu đường kẻ
+        c.moveTo(20, 30);
+        //điểm keetd thúc đường kẻ
+        c.lineTo(400, 50);
+        // lineWidth gọi ra độ dày của đường kẻ
+        c.lineWidth = 5;
+        // butt là giá trị mặc định ko có mũ đc thêm vào.
+        //round thêm mũ tròn cho đường thẳng, nên có vẻ dường thẳng nhìn sẽ dài hơn
+        //square thêm mũ vuông cho đường thẳng, nên có vẻ dường thẳng nhìn sẽ dài hơn
+        c.lineCap = "butt";
+        // c.lineCap = "round";
+        // c.lineCap = "square"
+        c.stroke()
+        //gọi ra ddường kẻ
 
-    //vẽ hình tròn
-    //bắt đầu vẽ
-    c.beginPath()
-    // 1,2 là vị trí tâm của bán kính, 3 là bán kính đường tròn, 4, 5 là giá trị mặc định.
-    // c.arc(1,2,3,4,5)
-    c.arc(700, 400, 60, 0, Math.PI * 2)
-    // nếu PI không nhân 2 ta được nửa đường tròn
-    c.arc(500,400,60,0,Math.PI)
-    // c.fill();
-    c.stroke() // thêm viền cho hình tròn
-    c.closePath();     //end vẽ hinh tròn
+        // lên kết 2 đường thẳng, cà phương thức bo góc giữa chúng
+        c.beginPath()
+        // lineJoin để thể hiện sự liên kết giữa 2 đường thẳng
+        c.lineJoin = "bevel";            // bo cắt lát 
+        // c.lineJoin = "miter"           // mặc định, tạo ra góc nhọn
+        // c.lineJoin = "round"          // bo tròn góc
+        c.lineWidth = 20
+        c.moveTo(800, 30);
+        c.lineTo(900, 30);
+        c.lineTo(900, 130);
+        c.stroke()
+    }
+    strokes()
 
+    function hcn() {
+
+        c.beginPath()
+        //vẽ hình chữ nhật 
+        //c.strokeRect(điểm bắt đầu của hcn trên trục x, điểm bắt đầu của hcn trên trục y,điểm kết thúc của hcn trên trục x, điểm kết thúc của hcn trên trục y ) điểm bắt đầu nằm ở góc phần tư thứ 1 và điểm kết thúc nằm ở góc phần tư thứ 4
+        c.lineWidth = 10
+        // c.strokeRect(50, 100, 300, 200)
+        //fill để đổ màu cho hình vẽ, màu đc thêm bên trên
+        c.fillRect(400, 100, 300, 200)
+
+        c.fillStyle = 'green';    // color of fill
+        var y = 100, h = 300, w = 260;
+        for (var x = 50; x != 120; x = x + 10) {
+            c.fillRect(x, y, h, w);
+            c.clearRect(x + 5, y + 5, h - 10, w - 10);
+            y = y + 10;
+            h = h - 20;
+            w = w - 20;
+        }
+    }
+    hcn()
+
+    function circle() {
+        c.fillStyle = "orange"
+        //vẽ hình tròn
+        //bắt đầu vẽ
+        c.beginPath()
+        // 1,2 là vị trí tâm của bán kính, 3 là bán kính đường tròn, 4, 5 là giá trị mặc định.
+        // c.arc(1,2,3,4,5)
+        c.arc(700, 400, 60, 0, Math.PI * 2)
+        // nếu PI không nhân 2 ta được nửa đường tròn
+        c.arc(500, 400, 60, 0, Math.PI)
+        c.fill();
+        // c.stroke() // thêm viền cho hình tròn
+        c.closePath();     //end vẽ hinh tròn
+    }
+    circle()
+
+
+    var grd = c.createLinearGradient(0, 0, 200, 10);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Fill with gradient
+    c.fillStyle = grd;
+    c.fillRect(50, 380, 150, 80);
     // xóa các hình nằm trong phạm vi hình chữ nhật
-    c.clearRect(100, 100, 100, 500);
+    // c.clearRect(100, 100, 100, 500);
 
+    function text() {
+        c.lineWidth = 1;
+        c.fillStyle = " blue"
+        c.strokeStyle = " blue"
+        // text
+        c.font = "30px Arial";
+        c.fillText("Hello World", 130, 200);
+        c.strokeText("Hello World", 130, 250);
+    }
+    text()
+    
+    function luoi() {
+        c.beginPath()
+        c.lineWidth = 2;
+        c.lineCap = "square"
+        c.strokeStyle = "#fff"
+        let i = 400;
+        let j = 100
+        for (let j = 100; j <= 300; j += 20) {
+            c.moveTo(400, j);
+            c.lineTo(700, j);
+            c.stroke();
+        }
+        for (let i = 400; i <= 700; i += 20) {
+            c.moveTo(i, 100);
+            c.lineTo(i, 300);
+            c.stroke();
+        }
+    }
+    luoi()
 
-    // text
-    c.font= "30px Arial";
-    c.fillText("Hello World",130,200);
-    </script>
+</script>
 
 </html>

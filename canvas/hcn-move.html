@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 3px solid #000;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+    <button onclick="start()">Start</button>
+    <button onclick="stops()">Stop</button>
+</body>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 1024;
+    canvas.height = 576;
+    var time = 100;
+    var position = {
+        x: 230,
+        y: 200
+    }
+    var car = {
+        x: 200,
+        y: 100,
+        step: 10
+    }
+    var gameTopPosition = 0;
+    var gameBottomPosition = 576;
+    // function sprite(time,color){
+    //     this.time = time;
+    //     this.color = color;
+    // }
+    function drawHcn() {
+        ctx.fillStyle = " red";
+        ctx.fillRect(position.x, position.y, car.x, car.y);
+    }
+    drawHcn()
+    function moveCar() {
+        ctx.clearRect(position.x, position.y, car.x, car.y);
+        let isTouchTop = position.y < gameTopPosition;
+        let isTouchBottom = position.y + car.y > gameBottomPosition;
+        if (isTouchBottom || isTouchTop) {
+            car.step = -car.step;
+        }
+        position.y += car.step
+        drawHcn()
+    }
+
+    function start() {
+        interval = setInterval(moveCar, time)
+    }
+    function stops() {
+        clearInterval(interval)
+    }
+</script>
+
+</html>

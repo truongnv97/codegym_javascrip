@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chuyển động khối vật</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 600;
+    canvas.height = 300;
+
+    let x = 200;
+    let y = 51;
+    let interval
+    function drawLine(){
+        ctx.moveTo(150,257);
+        ctx.lineTo(250,257)
+        ctx.stroke()
+    }
+    drawLine()
+    function draw(x, y) {
+        ctx.beginPath()
+        ctx.fillStyle = "red"
+        ctx.arc(x, y, 10, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.closePath()
+    }
+    function move() {
+        ctx.clearRect(0, 0, 800, 500)
+        y += 3
+        if (y === 252) {
+            y = 51
+        }
+        drawLine()
+        draw(x, y)
+    }
+    function start() {
+        interval = setInterval(move, 10)
+    }
+    function stop(){
+        clearInterval(interval)
+    }
+</script>
+
+</html>
