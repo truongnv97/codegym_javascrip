@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Informartion from an object
+    </title>
+</head>
+<body>
+    
+</body>
+<script>
+    var students = [
+       truong = {
+           age: 25,
+           fname: "nguyen van truong",
+           single: true 
+        },
+       huan = {
+           age: 25,
+           fname: "Vuong dac thi huan",
+           single: true 
+        },
+       trang = {
+           age: 25,
+           fname: "vu thi trang",
+           single: false
+        },
+       tuan = {
+           age: 25,
+           fname: "Lee minh tuan",
+           single: true 
+        }
+    ]
+
+    for(let i=0; i< students.length; i++){
+        let student = "'" + students[i].fname + "'" + " is ";
+        if(students[i].single){
+            console.log(student + "single");
+        } else{
+            console.log(student + "married");
+        }
+    }
+</script>
+</html>

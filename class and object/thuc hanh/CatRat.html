@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mèo đuổi chuột</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Animal {
+        name
+        weight
+        speed
+        sound
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        setSound(sound) {
+            this.sound  = sound
+            console.log(`${this.name} said ${sound}`);
+        }
+        getSound(sound){
+            return this.sound
+        }
+        getSpeed() {
+            return this.speed
+        }
+        getName(){
+            return this.name;
+        }
+        getWeight(){
+            return this.name
+        }
+    }
+    class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed)
+            this.status = status;
+        }
+        getStatus() {
+            return this.status == true ? "alive": "die"
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+        // getSound() {
+        //     super.getSound();
+        //     console.log(`${this.name} kêu chít chít!`);
+        // }
+    };
+    class Cat extends Animal {
+        // catchRat(rat) {
+        //     return (this.speed > rat.getSpeed())
+        //     // console.log(`${this.name} có thể bắt ${Rat.name}`);
+        // }
+        // eatRat(rat) {
+        //     if (this.catchRat == false) {
+        //         if (rat.getStatus()) {
+        //             console.log(`${this.name} có thể ăn ${rat.getName()}`);
+        //         } else {
+        //             console.log(`${this.name} không thể ăn ${rat.getName()}`);
+        //         }
+        //     } else {
+        //         console.log(`${this.name} không thể bắt ${rat.getName()}`);
+        //     }
+        // }
+        
+        // catchRat(rat) {
+        //     if (rat.getStatus() == true) {
+        //         if (this.speed > rat.getSpeed()) {
+        //             console.log(`${this.name} có thể bắt được ${rat.getName()}`);
+        //         } else {
+        //             console.log(`${this.name} không thể bắt được ${rat.getName()}`);
+        //         }
+        //     } else {
+        //         console.log(`${rat.getName()} không thể ăn được!`);
+        //     }
+        // }
+
+        eatRat(rat) {
+            if (this.getSpeed() > rat.getSpeed()) {
+                if (rat.getStatus() === "alive") {
+                    console.log(`${rat.getName()} có thể ăn được!`);
+                    this.weight += rat.getWeight();
+                } else {
+                    console.log(`${rat.getName()} không thể ăn được!`);
+                }
+            } else {
+                console.log(`${this.name} không đuổi kịp ${rat.name}`);
+            }
+        }
+        // decrease() {
+        //     return this.weight + Cat.weight
+        // }
+    }
+    
+    let tom = new Cat("tom", 36, 20);
+    // console.log(tom.catchRat());
+    tom.setSound("moew moew")
+    let jerry = new Rat("Jerry", 10, 35, true)
+    jerry.setSound("chit chit");
+    console.log(tom, jerry);
+    tom.eatRat(jerry);
+    // console.log(tom.decrease());
+</script>
+
+</html>

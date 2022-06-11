@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vollum of Cylinder</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Cylinder{
+        height
+        diameter
+        constructor(height,diameter){
+            this.height = height;
+            this.diameter = diameter;
+        }
+        getDiameter(){
+            return this.diameter
+        }
+        getHeight(){
+            return this.height
+        }
+        setHeight(height){
+            this.height = height
+        }
+        setDiameter(diameter){
+            this.diameter = diameter
+        }
+        vollum(){
+            return this.height*Math.PI*this.diameter*this.diameter/4
+        }
+    }
+       let cylinder = new Cylinder(+prompt("Nhập vào giá trị của height"),+prompt("Nhập vào giá trị của diameter"))
+    
+    console.log("vollum of cylineder is "+cylinder.vollum());
+</script>
+</html>

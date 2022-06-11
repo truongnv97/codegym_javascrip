@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple game</title>
+</head>
+
+<body>
+    <button onclick="getInput()">Nhập thông số</button>
+    <button onclick="eatApple()">Eat Apple</button>
+    <div id="disPlay"></div>
+</body>
+<script>
+    class Apple {
+        constructor(weight1) {
+            this.weight1 = weight1
+        }
+        decrease() {
+            this.weight1--
+        }
+        isEmpty() {
+            return this.weight1 == 0;
+        }
+        getWeight() {
+            return this.weight1;
+        }
+        setweight(weight1) {
+            return this.weight = weight1
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight
+        }
+        setGender(gender) {
+            return this.gender = gender;
+        }
+        setName(name) {
+            return this.name = name;
+        }
+        setWeight(weight) {
+            return this.weight = weight;
+        }
+        getGender() {
+            return this.gender;
+        }
+        getName() {
+            return this.name
+        }
+        getWeight() {
+            return this.weight
+        }
+        checkApple(apple) {
+            return !apple.isEmpty()
+        }
+        eat(apple) {
+            if (!apple.isEmpty()) {
+                apple.decrease();
+                this.weight++
+            }
+        }
+        said(str) {
+            console.log(` said: ${str}`);
+        }
+    }
+    let adam, tao
+    function getInput() {
+        let name = prompt("nhập tên")
+        let gender = prompt("nhập giới tính")
+        let weight = +prompt("nhập cân nặng")
+        let weight1 = +prompt("Nhập khối lượng quar táo")
+        tao = new Apple(weight1)
+        adam = new Human(name, gender, weight);
+        document.getElementById("disPlay").innerHTML = "Tên: " + adam.getName() + "<br> Giới tính: " + adam.getGender() + "<br> Cân nặng: " + adam.getWeight() + "<br>Khối lượng quả táo là: " + tao.getWeight()
+        console.log(adam, tao);
+    }
+    function eatApple() {
+        if (adam.checkApple(tao)) {
+            adam.eat(tao)
+            // apple.decrease()
+            if (tao.getWeight() == 0){
+                adam.said("Ăn hết táo rồi")
+            } else{
+                adam.said("Ngon")
+            }
+        }
+        console.log(adam, tao);
+    }
+</script>
+
+</html>

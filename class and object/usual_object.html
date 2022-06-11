@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các đối tượng thường dùng</title>
+</head>
+<body>
+    <p id="timeDisplay"></p>
+</body>
+<script>
+    // ******** time display *************
+    var today = new Date()
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDay();
+    var daylist = ["Chủ nhật", "thứ 2","thứ 3","thứ 4","thứ 5","thứ 6","thứ 7"];
+    var date = today.getDate();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+
+    var interval = setInterval(hienthi,1000)
+    function hienthi(){
+        document.getElementById("timeDisplay").innerHTML = ("Today is : " + year + "-" + month + "-" + date + " " + daylist[day] + ".<br> ") + ("Current Time : " + hour + " : " + minute + " : " + second);
+        // document.getElementById("timeDisplay").innerHTML = today
+    }
+    hienthi()
+
+
+    // ***** Đối tượng string ****
+   var str = "Hello world";
+   var str1 = "Hello em"
+   console.log(str.length);
+   console.log(str.charAt(4));          // trả về kí tự tại một vị trí đuọce chỉ định
+   console.log(str.concat(" ",str1," ","anh về"));     // cộng hai hoặc nhiều chuỗi lại voies  nhau
+   console.log(str.endsWith(str1));     //Kiểm tra xem liệu một chuỗi có kết thúc giống với một chuỗi khác hay không.
+   console.log(str.startsWith(str1));       // Kiểm tra xem liệu một chuỗi có kết thúc giống với một chuỗi khác hay không
+   console.log(str.indexOf("o"));      // Trả về vị trí của một chuỗi ở trong một chuỗi khác. Nếu chuỗi này xuất hiện nhiều lần thì lấy vị trí của lần xuất hiện đầu tiên.
+   console.log(str.lastIndexOf("o"));     //Trả về vị trí của lần xuất hiện cuối cùng một chuỗi ở trong một chuỗi khác.
+   console.log(str.replace(/l/gi, "n"));        //Thay thế một chuỗi bằng một chuỗi khác.
+   console.log(str.split(""));      //Tách một chuỗi thành một mảng các chuỗi
+   console.log(str.substr(1,2));        //Lấy 1 phần nhỏ của chuỗi
+   console.log(str.toLowerCase());      // biến thành chữ thường
+   console.log(str.toUpperCase());      // Biến thành chữ hoa
+   console.log(str.trim());
+
+</script>
+</html>

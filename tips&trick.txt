@@ -15,5 +15,7 @@ Ctrl + ` Ẩn / Hiện Terminal trong Visual Studio Code
 Ctrl + Shift + M này giúp bạn hiển thị / ẩn bảng Problems trong Visual Studio Code.
 
 \xB0 là chữ độ nhỏ trong độ C, độ F.
+&#8451; là độ C
+&#8457; là độ F
 &nbsp; dấu space 1 cách;
 &ensp; dấu space 2 cách;

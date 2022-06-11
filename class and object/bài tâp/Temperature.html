@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw temperature</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Temperature{
+        celsius
+        constructor(celsius){
+            this.celsius = celsius
+        }
+        getCelsius(){
+            return this.celsius + "\xB0"+"C"
+        }
+        getFahrenheit(){
+            return this.celsius*1.8 +32 + "\xB0"+"F"
+        }
+        getKevil(){
+            return this.celsius + 273.15 + "\xB0" +"K"
+        }
+        setCelsius(celsius){
+            this.celsius = celsius
+        }
+    }
+    let temperature = new Temperature(20)
+    console.log(temperature.getFahrenheit());
+    console.log(temperature.getKevil());
+    
+    temperature.setCelsius(10);
+    console.log(temperature.getFahrenheit());
+    console.log(temperature.getKevil());
+</script>
+</html>

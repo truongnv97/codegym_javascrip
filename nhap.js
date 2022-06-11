@@ -1,22 +1,70 @@
-function getArray() {
-  let value = +document.getElementById("number").value;
-  let arr = Array();
-  let sum = 0;
-  for (let count = 0; count < value; count++) {
-    arr[count] = Math.floor(Math.random() * 101);
-  }
-  return arr;
+class Apple {
+    constructor(weight = 10){
+        this.weight = weight;
+    }
+
+    getWeight(){
+        return this.weight;
+    }
+
+    isEmpty(){
+        return this.weight == 0;
+    }
+
+    decrease(){
+        this.weight--;
+    }
+};
+
+class Human {
+    constructor(name, isMale = true, weight = 40){
+        this.name = name;
+        this.isMale = isMale;
+        this.weight = weight;
+    }
+
+    getName(){
+        return this.name;
+    }
+    getGender(){
+        return this.isMale ? "Male" : "Female";
+    }
+    getWeight(){
+        return this.weight;
+    }
+
+    setName(name){
+        this.name = name;
+    }
+    setGender(isMale){
+        this.isMale = isMale;
+    }
+    setWeight(weight){
+        this.weight = weight;
+    }
+
+    say(str){
+        console.log(`${this.name} said: ${str}`);
+    }
+    checkApple(apple){
+        return !apple.isEmpty();
+    }
+    eatApple(apple){
+        if(!apple.isEmpty()){
+            apple.decrease();
+            this.weight++;
+        }
+    }
+
 }
 
-function isPrice(number) {
-  if (number < 2) {
-    return false;
-  } else {
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-      if (number % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
+let tao = new Apple();
+let adam = new Human("Adam", true);
+console.log(adam, tao);
+console.log(adam.checkApple(tao));
+while(adam.checkApple(tao)){
+    adam.eatApple(tao);    
+    console.log(adam, tao);
 }
+if(tao.getWeight() == 0) adam.say("Ăn hết táo rồi!");
+else adam.say("Hmm!");

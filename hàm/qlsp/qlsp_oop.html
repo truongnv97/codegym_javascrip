@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #wrap {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .boldText {
+        font-weight: 600;
+    }
+
+    #smallWrap {
+        width: fit-content;
+        padding: 24px;
+        background-color: rgb(242, 241, 241);
+        border-radius: 5px;
+    }
+
+    input {
+        height: 32px;
+        width: 160px;
+        margin-right: 12px;
+        border: thin solid rgb(186, 182, 182);
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    button {
+        padding: 8px 12px;
+        color: #fff;
+        background-color: rgb(19, 155, 19);
+        border: thin solid rgb(19, 155, 19);
+        border-radius: 3px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(even) {
+        background: rgb(86, 148, 228);
+        height: 40px;
+        border: 1px solid #ddd;
+    }
+
+
+    #red {
+        color: red;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div class="addNewProduct">
+            <h2 class="boldText" id="title">Add new product</h3>
+                <div id="smallWrap">
+                    <input type="text" name="" id="product" placeholder="Product name">
+                    <input type="text" name="" id="price" placeholder="Product price">
+                    <input type="text" name="" id="brand" placeholder="Product brand">
+                    <input type="text" name="" id="descrip" placeholder="Product description">
+                    <button onclick="addProduct()" id="add">Add</button>
+                </div>
+        </div>
+        <h2 class="boldText" style="text-align: center;">Display All Product</h2>
+        <div id="productDisplay"></div>
+    </div>
+</body>
+<script src="qlsp_oop.js"></script>
+
+</html>

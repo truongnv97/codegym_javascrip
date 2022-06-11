@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        class Circle {
+            constructor(radius, color) {
+                this.radius = radius;
+                this.color = color;
+            }
+            getRadius() {
+                return this.radius;
+            }
+            getArea() {
+                return Math.PI * this.radius * this.radius;
+            }
+        };
+        var circle = new Circle(2);
+        console.log(circle.getRadius()); // 2
+        // 12.566370614359172
+        console.log(circle.getArea());
+
+
+        let person = {
+            name: ['Bob', 'Smith'],
+            age: 32,
+            gender: 'male',
+            interests: {
+                first: 'music',
+                second: 'skiing'
+            },
+            bio: function () {
+                alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests.first + ' and ' + this.interests.second + '.');
+            },
+            greeting: function () {
+                alert('Hi! I\'m ' + this.name[0] + '.');
+            }
+        };
+        // person.greeting()
+        // person.bio()
+        console.log(person.name[1]);
+
+        //
+        let me = {
+            family_name: "Nguyen",
+            middle_name: "van",
+            name: "truong",
+            age: 24,
+            tall: "163cm",
+        }
+        console.log(me);
+        me.weight = "56kg";
+        me.name = "HUan"
+        console.log(me);
+
+        //
+        let myDiv = document.createElement('div'); 
+        let myVideo = document.querySelector('video');
+    </script>
+
+</body>
+
+</html>

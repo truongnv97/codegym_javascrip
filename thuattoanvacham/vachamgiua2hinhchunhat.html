@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        canvas{
+            border: 3px solid #000;
+        }
+    </style>
+<body>
+    <canvas></canvas>
+    
+</body>
+<script>
+var canvas = document.querySelector("canvas")
+var ctx = canvas.getContext("2d")
+canvas.width = 1000;
+canvas.height = 600
+ class Rect {
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.w = width;
+        this.h = height;
+    }
+    draw(){
+        ctx.strokeRect(this.x, this.y, this.w, this.h)
+    }
+}
+
+// xác định va chạm giữa 2 hình chữ nhật (đối tượng Rect)
+function isCollision(rect1, rect2) {
+    let distX = (rect1.x + (rect1.w/2)) - (rect2.x + (rect2.w)/2);
+    if (distX < 0)
+        distX = -distX;
+
+    const distW = (rect1.w + rect2.w)/2;
+
+    let distY =(rect1.y + (rect1.h/2)) - (rect2.y + (rect2.h)/2);
+    if(distY < 0)
+        distY = -distY;
+
+    const distH = (rect1.h + rect2.h)/2;
+
+    return (distX <= distW && distY <= distH);
+}
+let rect1 =new Rect(100,100,200,100)
+let rect2 =new Rect(300,200,200,100)
+rect1.draw()
+rect2.draw()
+console.log(isCollision(rect1,rect2));
+
+
+
+
+
+
+</script>
+</html>

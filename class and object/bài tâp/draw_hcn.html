@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình chữ nhật</title>
+</head>
+<style>
+    canvas {
+        border: 3px solid #000;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+    <button onclick="inputRectangle() ">Nhập thông số</button>
+    <button onclick="drawRectangle() ">Vẽ hình</button>
+    <button onclick="displayRectangle() ">Hiển thị</button>
+</body>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d")
+    canvas.width = 800;
+    canvas.height = 500;
+
+    class Rectangle {
+        constructor(long, width) {
+            this.long = long;
+            this.width = width;
+        }
+        getLong() {
+            return this.long
+        }
+        getWidth() {
+            return this.width
+        }
+        getChuvi() {
+            return (this.long + this.width) * 2
+        }
+        getDientich() {
+            return (this.long * this.width)
+        }
+
+        setLong(long) {
+            this.long = long
+        }
+        setWidth(width) {
+            this.width = width
+        }
+        creatRectangle(){
+            let x = Math.floor(Math.random() * 700)
+            let y = Math.floor(Math.random() * 400)
+            ctx.strokeStyle = "red"
+            ctx.clearRect(0,0,canvas.width,this.height)
+            ctx.strokeRect(x,y,this.long, this.width);
+            
+        }
+
+    }
+    let rectangle;
+    function inputRectangle() {
+        let width = +prompt("Nhap chieu rong")
+        let long = +prompt("Nhap chieu dai")
+        rectangle = new Rectangle(long, width)
+    }
+    function drawRectangle(){
+        rectangle.creatRectangle()
+    }
+    function displayRectangle(){
+
+    }
+    console.log(rectangle.getChuvi());
+    console.log(rectangle.getDientich());
+    
+</script>
+
+</html>

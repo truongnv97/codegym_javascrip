@@ -14,40 +14,104 @@
     <canvas></canvas>
 </body>
 <script>
+//     const canvas = document.querySelector("canvas");
+//     const ctx = canvas.getContext("2d");
+//     canvas.width = 1500;
+//     canvas.height = 756;
+//     // tạo màu
+//     function getRandomHex() {
+//         return Math.floor(Math.random() * 255);
+//     }
+
+//     function getRandomColor() {
+//         var red = getRandomHex();
+//         var green = getRandomHex();
+//         var blue = getRandomHex();
+//         return "rgb(" + red + "," + blue + "," + green + ")";
+//     }
+//     function Circle(x, y, radius) {
+//         this.x = x;
+//         this.y = y;
+//         this.radius = radius;
+//     }
+//     function creatCircle() {
+//         ctx.beginPath();
+//         var radius = Math.floor(Math.random() * 80);
+//         var color = getRandomColor();
+//         var x = Math.random() * window.innerWidth;
+//         var y = Math.random() * window.innerHeight;
+//         ctx.arc(x, y, radius, 0, 2 * Math.PI)
+//         ctx.fillStyle = color
+//         ctx.fill();
+//     }
+    
+//     function multilCircle(){
+//         for (let i = 0; i < 40; i++) {
+//             creatCircle()
+//         }
+//     }
+// var interval = setInterval(multilCircle,1000)
+
+
+
+    /////
+
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = 1500;
     canvas.height = 756;
     // tạo màu
-    function getRandomHex() {
-        return Math.floor(Math.random() * 255);
-    }
 
-    function getRandomColor() {
-        var red = getRandomHex();
-        var green = getRandomHex();
-        var blue = getRandomHex();
-        return "rgb(" + red + "," + blue + "," + green + ")";
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+
+        }
+        getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+        getRandomColor() {
+           var red = this.getRandomHex();
+           var green = this.getRandomHex();
+           var blue = this.getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
+        creatCircle1() {
+            ctx.beginPath();
+            var radius = Math.floor(Math.random() * 80);
+            var color = this.getRandomColor();
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            ctx.arc(x, y, radius, 0, 2 * Math.PI)
+            ctx.fillStyle = color
+            ctx.fill();
+        }
+        creatCircle2() {
+            ctx.beginPath();
+            var color = this.getRandomColor();
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+            ctx.fillStyle = color
+            ctx.fill();
+        }
     }
-    function Circle(x, y, radius) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
+    let circle1 = new Circle(100, 100, 50)
+    function multilCircle1() {
+        for (let i = 0; i < 40; i++) {
+            circle1.creatCircle1()
+        }
     }
-    function creatCircle() {
-        ctx.beginPath();
-        var radius = Math.floor(Math.random() * 80);
-        var color = getRandomColor();
-        var x = Math.random() * window.innerWidth;
-        var y = Math.random() * window.innerHeight;
-        ctx.arc(x, y, radius, 0, 2 * Math.PI)
-        ctx.fillStyle = color
-        ctx.fill();
+    // multilCircle1()
+    
+    function multilCircle2() {
+        for (let i = 0; i < 40; i++) {
+            let circle2 = new Circle(Math.random() * window.innerWidth, Math.random() * window.innerHeight, Math.floor(Math.random() * 80))
+            circle2.creatCircle2()
+        }
     }
-    creatCircle()
-    for (let i = 0; i < 40; i++) {
-        creatCircle()
-    }
+    multilCircle2()
+
 </script>
 
 </html>
