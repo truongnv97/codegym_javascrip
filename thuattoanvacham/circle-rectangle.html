@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 3px solid #000;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+</body>
+<script>
+    var canvas = document.querySelector("canvas")
+    var ctx = canvas.getContext("2d")
+    canvas.width = 1000;
+    canvas.height = 600
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        draw() {
+            ctx.beginPath()
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+            ctx.fill()
+        }
+    }
+
+    class Rect {
+        constructor(x, y, width, height) {
+            this.x = x;
+            this.y = y;
+            this.w = width;
+            this.h = height;
+        }
+        draw() {
+            ctx.strokeRect(this.x, this.y, this.w, this.h)
+        }
+    }
+
+    function checkCollision(cir, rect) {
+        let Cx = cir.x;
+        let Cy = cir.y;
+        console.log(Cx, Cy);
+        let rLeft = rect.x;
+        let rTop = rect.y;
+        let rRight = rect.x + rect.w;
+        let rBottom = rect.y + rect.h;
+        console.log(rLeft, rTop, rRight, rBottom);
+        let Ax, Ay
+        if (Cx < rLeft)
+            Cx = rLeft;
+        else if (Cx > rRight)
+            Cx = rRight;
+            console.log(Cx);
+
+        if (Cy < rTop)
+            Cy = rTop;
+        else if (Cy > rBottom)
+            Cy = rBottom;
+            console.log(Cy);
+
+        let dx = cir.x - Cx;
+        let dy = cir.y - Cy;
+console.log(dx,dy);
+        return (dx * dx + dy * dy) <= cir.radius * cir.radius;
+    }
+    let circle = new Circle(170, 210, 50)
+    let rectangle = new Rect(200, 250, 250, 100)
+    circle.draw()
+    rectangle.draw()
+    console.log(checkCollision(circle, rectangle)); 
+</script>
+
+</html>
