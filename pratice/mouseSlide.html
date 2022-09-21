@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .container {
+            overflow-x: hidden;
+            width: 100%;
+            position: absolute;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            top: -1rem;
+            position: relative;
+        }
+
+        #buttons .button {
+            width: 0.75rem;
+            height: 0.75rem;
+            border: 1px solid grey;
+            border-radius: 50%;
+            margin-right: 0.25rem;
+            cursor: pointer;
+        }
+
+        #buttons .button.active {
+            background: green;
+        }
+
+        .content {
+            display: flex;
+            position: relative;
+            width: 100%;
+            transition: 350ms ease;
+        }
+
+        .content_inner {
+            background: grey;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .slide_buttons_button.active {
+            background: green;
+        }
+
+        .content.toggle1 {
+            transform: translateY(-100%);
+        }
+
+        @media (orientation:landscape) {
+            .content_inner img {
+                height: 95vh;
+            }
+        }
+    </style>
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/jqwM0nhOLEFI1HHBabwr80Od3TC.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/6qVF0gnLnbKCgcMfCpCB8GH7B5I.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/jqwM0nhOLEFI1HHBabwr80Od3TC.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/jqwM0nhOLEFI1HHBabwr80Od3TC.jpg"></div>
+                <div class="content_inner"><img
+                        src="https://www.themoviedb.org/t/p/original/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg"></div>
+            </div>
+            <div id="buttons"></div>
+            <div class="slide_buttons">
+                <div class="slide_buttons_button" id="before_button"></div>
+                <div class="slide_buttons_button" id="after_button"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var slidenumber = document.getElementsByClassName('content_inner').length;//how much slide
+    for (b = 0; b < slidenumber; b++) {
+        document.getElementById('buttons').innerHTML += '<span class="button"></span>';//adding buttons by slide number
+    }
+    var button = document.querySelectorAll(".button");//get array from buttons
+    var content = document.getElementsByClassName("content")[0];
+    button[0].classList.add('active');//adding active class to first button for default view
+    var a = 0;
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener('click', function (e) {
+            for (let z = 0; z < button.length; z++) {
+                button[z].classList.remove('active')// when click any button delete active class from others
+            }
+            button[i].classList.add('active');//adding active class clicking button
+            a = i;
+            content.style.transform = "translateY(calc(-100% * (" + i + "-1))";
+        });
+    }
+
+    button2 = document.querySelectorAll(".slide_buttons_button");//getting next and prew buttons
+    for (t = 0; t < button2.length; t++) {
+        button2[t].addEventListener('click', function (e) {
+            if (e.target.id == "before_button") {//if button for prew it make variable x-1
+                a = a - 1;
+                if (a == -1) {
+                    a = slidenumber - 1
+                }
+            }
+
+            if (e.target.id == "after_button") {//if button for next it make variable x+1
+                a = a + 1;
+                if (a == slidenumber) {
+                    a = 0
+                }
+            }
+            for (let a = 0; a < slidenumber; a++) {
+                button[a].classList.remove('active')
+            }
+            button[a].classList.add('active');
+            content.style.transform = "translateX(calc(-100% * (" + a + "))";//using variable for change slide
+        });
+    };
+
+
+    //touch sliding
+    var posN = 0,
+        posZ1 = 0,
+        posZ = 0,
+        yeni = 0,
+        dem = 0,
+        mytrans = window.getComputedStyle(content).getPropertyValue('transform'),
+        slides = content.getElementsByClassName('content_inner'),
+        slidesLength = slides.length,
+        slideSize = content.getElementsByClassName('content_inner')[0].offsetWidth;
+
+    // mouse events
+    content.onmousedown = dragStart;
+
+    // touch events
+    content.addEventListener('touchstart', dragStart);
+    content.addEventListener('touchend', dragEnd);
+    content.addEventListener('touchmove', dragAction);
+
+
+    function dragStart(e) {
+        e = e || window.event;
+        e.preventDefault();
+        //posInitial =  content.offsetLeft;
+        posN = 0;
+        posZ = 0;
+        if (e.type == 'touchstart') {
+            posY1 = e.touches[0].clientY;
+
+        } else {
+            posY1 = e.clientY;
+        }
+
+        if (e.type == 'touchstart') {
+            posY2 = e.touches[0].clientY;
+        } else {
+            posY2 = e.clientY;
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+        }
+
+        if (e.type == 'touchstart') {
+            posY3 = e.touches[0].clientY;
+        }
+
+        else {
+            posY3 = e.clientY;
+        }
+
+    }
+
+    function dragAction(e) {
+        e = e || window.event;
+
+        if (e.type == 'touchmove') {
+            posN = e.touches[0].clientY - posY1;
+            posY1 = e.touches[0].clientY;
+
+        } else {
+            posN = e.clientY - posY1;
+            posY1 = e.clientY;
+        }
+
+        if (e.type == 'touchmove') {
+            posZ = posY2 - e.touches[0].clientY;
+            posY2 = e.touches[0].clientY;
+        } else {
+            posZ = posY2 - e.clientY;
+            posY2 = e.clientY;
+        }
+
+        var myff = posY2 - posY3;
+        content.style.transform = "translateY(calc((-100% * (" + a + ")) + (" + myff + "px)))";
+        console.log("calc((-100% * (" + a + ")) + (" + myff + "px))");
+
+        if (mytrans !== "none") {
+            dem = parseInt((mytrans.replace(/,/g, "")).split(" ")[4]);
+        }
+
+        else {
+            mytrans = window.getComputedStyle(content).getPropertyValue('transform');
+        }
+        console.log(myff)
+
+    }
+
+    function dragEnd(e) {
+        if (mytrans !== "none") {
+            posFinal = parseInt((mytrans.replace(/,/g, "")).split(" ")[4]);
+        };
+        //console.log(posN)
+        if (posN < 0) {
+            //console.log("burda knk1");
+            content.style.transform = "translateY(calc(-100% * (" + a + " + 1))";
+            a = a + 1;
+            if (a == slidenumber) {
+                a = 0
+            }
+        } else if (posN > 0) {
+            //console.log("burda knk2");
+            content.style.transform = "translateY(calc(-100% * (" + a + " - 1))";
+            a = a - 1;
+            if (a == -1) {
+                a = slidenumber - 1
+            }
+        }
+
+        for (let z = 0; z < button.length; z++) {
+            button[z].classList.remove('active')
+        }
+        button[a].classList.add('active');
+        content.style.transform = "translateY(calc(-100% * (" + a + ")";
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
+
+    // function timeout() {
+    //     setTimeout(function () {
+    //         a = a + 1;
+    //         if (a == slidenumber) {
+    //             a = 0
+    //         }
+    //         content.style.transform = "translateY(calc(-100% * (" + a + "))";
+    //         for (let z = 0; z < button.length; z++) {
+    //             button[z].classList.remove('active')
+    //         }
+    //         button[a].classList.add('active');
+    //         timeout();
+    //     }, 5000)
+    // }
+    // timeout();
+</script>
+
+</html>

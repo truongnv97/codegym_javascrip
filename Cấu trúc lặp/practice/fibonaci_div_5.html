@@ -12,9 +12,7 @@
 
 </body>
 <script>
-    let x = 0, y = 1, i;
-    let a = x + y;
-    let n =""
+
     //hiển thị số đầu tiên chia hết cho 5
     /*  while(a % 5 !=0){
           a=x+y;
@@ -25,15 +23,22 @@
       */
 
     //hiển thị tât cả các số chia hết cho 5 vào nhỏ hơn 10000;
-    while (a < 10000) {
-        a = x + y;
-        x = y;
-        y = a;
-        if(a%5==0){
-            n+=a+" "
+    function fibDiv5(so) {
+        let x = 0, y = 1, i;
+        let a = x + y;
+        var n = ""
+        while (a < so) {
+            a = x + y;
+            x = y;
+            y = a;
+            if (a % 5 == 0) {
+                n += a + " "
+            }
+
         }
+        console.log(n);
     }
-    document.write(n)
+    fibDiv5(1000)
 </script>
 
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="quizBox">
+            <div id="header-box">
+                <div class="question-number">
+                    <h3>Câu số: <span id="number"></span></h3>
+                    <div id="mark"></div>
+                </div>
+                <div id="score-box">
+                    <p class="score-text">Score: <span id="score"></span></p>
+                </div>
+            </div>
+            <hr>
+            <div class="qAndA" id="qAndA">
+                
+            </div>
+
+            <div id="result">
+                <div>
+                    <p>Correct answers numbers: <span id="true-number"></span></p>
+                    <p>Your Score: <span id="yourScore"></span></p>
+                    <button onclick="restart()">Restart</button>
+                    <br>
+                    <button onclick="answerView()">View Answer</button>
+
+                </div>
+            </div>
+            <div id="startbox">
+                <h2>Quiz game</h2>
+                <button onclick="startFunction()">Start</button>
+                <br>
+                <button onclick="guideFunction()">Guide</button>
+            </div>
+            <div id="guideBox">
+                <p>
+                    Bạn sẽ phải trả lời 10 câu đố ngẫu nhiên về những kiến thức liên quan đến Nhật Bản
+                    Mỗi câu chỉ có duy nhất 1 đáp án đúng, hãy click chuột vào đáp án mà bạn muốn chọn
+                    Đáp án đúng sẽ hiện màu xanh, đáp án sai sẽ hiện màu đỏ
+                    Mỗi câu có giá trị là 10 điểm, tổng số điểm là 100
+                    Hãy thử xem bạn hiểu bao nhiêu về Nhật Bản nhé!
+                </p>
+
+                <div><button onclick="CloseBtn()">Close Guide</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="quiz-class.js"> </script>
+<script src="main.js"> </script>
+
+</html>

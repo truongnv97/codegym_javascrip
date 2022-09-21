@@ -19,6 +19,7 @@
         var UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var LOWER = "abcdefghijklmnopqrstuvwxyz";
         let value = document.getElementById("text").value
+        console.log(value);
         let Text = [];
         // for (let i = 0; i < value.length; i++) {
         //     if (UPPER.indexOf(value[i]) !== -1) {
@@ -38,6 +39,7 @@
         for (let i =0; i<value.length; i++){
             if(value[i]===value[i].toUpperCase()){
                 Text.push(value[i].toLowerCase());
+                console.log(value[i]);
             }
             else if(value[i]===value[i].toLowerCase()){
                 Text.push(value[i].toUpperCase());

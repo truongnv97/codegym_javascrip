@@ -49,9 +49,9 @@
 
     // lay ve vị trí đầu tiên có giá trị "__" trong mảng hoặc chuỗi, neeus ko ton tai tra ve -1
     let arr5 = [3, 6, 3, 6, 4, 2]
-    console.log(arr5.indexOf(5));
+    console.log(arr5.indexOf(5));  //trả về giá trị -1
     // lay ve vị trí cuối cùng có giá trị "__" trong mang, neeus ko ton tai tra ve -1
-    console.log(arr5.lastIndexOf(3));
+    console.log(arr5.lastIndexOf(6));// trả về giá trị 3
 
     // hàm toString để biến mản về chuỗi
     console.log(arr5.toString())
@@ -64,7 +64,28 @@
     console.log(array1);
     
     // return trả về giá trị của hàm, có thể có hoặc không, có thể có nhiều return nhưng hàm sẽ kết thúc ngay khi gỏị return
-
+    // for (i = 5; i > 0; i--) {
+    //     table4 +=  "*".repeat(i) + "<br>";
+    // }
+    myColor = ["Red", "Green", "White", "Black"];
+    console.log(myColor.toString());
+    console.log(myColor.join( " "));
+    console.log(myColor.join('+'));
+    var str = "Hello world";
+   var str1 = "Hello em"
+   console.log(str.length);
+   console.log(str.charAt(4));          // trả về kí tự tại một vị trí đuọce chỉ định
+   console.log(str.concat(" ",str1," ","anh về"));     // cộng hai hoặc nhiều chuỗi lại voies  nhau
+   console.log(str.endsWith(str1));     //Kiểm tra xem liệu một chuỗi có kết thúc giống với một chuỗi khác hay không.
+   console.log(str.startsWith(str1));       // Kiểm tra xem liệu một chuỗi có kết thúc giống với một chuỗi khác hay không
+   console.log(str.indexOf("o"));      // Trả về vị trí của một chuỗi ở trong một chuỗi khác. Nếu chuỗi này xuất hiện nhiều lần thì lấy vị trí của lần xuất hiện đầu tiên.
+   console.log(str.lastIndexOf("o"));     //Trả về vị trí của lần xuất hiện cuối cùng một chuỗi ở trong một chuỗi khác.
+   console.log(str.replace(/l/gi, "n"));        //Thay thế một chuỗi bằng một chuỗi khác.
+   console.log(str.split(""));      //Tách một chuỗi thành một mảng các chuỗi
+   console.log(str.substr(1,2));        //Lấy 1 phần nhỏ của chuỗi
+   console.log(str.toLowerCase());      // biến thành chữ thường
+   console.log(str.toUpperCase());      // Biến thành chữ hoa
+   console.log(str.trim());
 </script>
 
 </html>

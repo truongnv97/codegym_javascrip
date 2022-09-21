@@ -20,17 +20,17 @@
         let array = Array();
         let evenNum = [],
             count = 0,
-            position = "";
+            position = [];
         for (var i = 0; i < value; ++i) {
             array[i] = Math.floor(Math.random() * 101);
             if (array[i] % 2 == 0) {
                 evenNum.push(array[i]);
                 count++;
-                position += i;
+                position.push(i)
             }
 
         }
-        document.getElementById("Display").innerHTML = (array.join(", ")) + "<br>" + "Even number is " + evenNum.join(", ") + "<br>" + "The number of even is " + count + "<br>" + "Even's position number is " + position
+        document.getElementById("Display").innerHTML = (array.join(", ")) + "<br>" + "Even number is " + evenNum.join(", ") + "<br>" + "The number of even is " + count + "<br>" + "Even's position number is " + position.join(", ")
 
     }
 

@@ -9,8 +9,8 @@
 
   <body>
     <p>Nhập vào số bất kỳ</p>
-    <input type="text" id="element" />
-    <button onclick="getElement()">Get</button>
+    <input type="text" id="element" required pattern="[0-9]" />
+    <input type="submit" onclick="getElement()" value="Get"/>
     <p id="ElementDisplay"></p>
   </body>
   <script>
@@ -31,6 +31,7 @@
       }
       document.getElementById("ElementDisplay").innerHTML =
         "Giá trị " + value + " có " + count + " phần tử";
+        document.getElementById("element").value = ""
     }
     
   </script>

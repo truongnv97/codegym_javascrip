@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="checkAdmin()">
     <!-- header start -->
     <div id="header" class="header row m-0 p-0">
         <div class="logo col-10 col-lg-5 col-xl-5 text-center">
@@ -92,6 +92,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">ABOUT US</a>
                         </li>
+                        <li class="nav-item" id="loginId">
+
+                        </li>
                     </ul>
                     <form class="search col-12 ps-2 pt-2">
                         <div class="d-flex">
@@ -104,10 +107,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="./cart.html"  target="_blank" class="icon me-2 mt-2">
-                                <i class="fa-solid fa-cart-shopping"></i>Cart
-                                <span id="cart-add"
-                                    class="position-absolute  translate-middle badge rounded-pill text-danger bg-light"></span>
+                            <a href="./cart.html" target="_blank" class="icon icon1 me-2 mt-2">
+                                <div class="cart-list">
+                                    <i class="fa-solid fa-cart-shopping"></i>Cart
+                                    <span id="cart-add"
+                                        class="position-absolute  translate-middle badge rounded-pill text-danger bg-light"></span>
+                                </div>
+                                <div id="cart-list-display">
+                                    <div class="d-flex flex-row cart-list-item">
+                                        <p class="title">Cart rỗng</p>
+                                    </div>
+                                </div>
                             </a>
                             <a href="#" class="icon ms-4 mt-2">
                                 <i class="fas fa-heart "></i>Yêu thích
@@ -400,23 +410,27 @@
         </ul>
     </div>
     <div id="add-product" class=" flex-column  ps-5 py-3 bg-success">
-        <label for="" class="pt-2 "><span class="width-w">Image</span> <input type="file" name="" accept="image/jpeg, image/png, image/jpg" id="image"></label>
+        <label for="" class="pt-2 "><span class="width-w">Image</span> <input type="file" name=""
+                accept="image/jpeg, image/png, image/jpg" id="image"></label>
         <label for="" class="pt-2"><span class="width-w">Title</span><input type="text" id="title"></label>
         <label for="" class="pt-2 "><span class="width-w">Price</span><input type=" text" id="price"></label>
         <label for="" class="pt-2"><span class="width-w">Information</span><input type="text" id="infor"></label>
-        <label for=""class="pt-2">
+        <label for="" class="pt-2">
             <select name="" id="product-type">
                 <option value="0">New Arrival</option>
                 <option value="1">Exclusive Items</option>
             </select>
         </label>
-        <label for=""class="pt-2"><input type="submit" class="py-2 ms-5 px-3 rounded-2 border-success" onclick="addFunction()" value="Add"><input type="button" class="py-2 px-3 ms-5 rounded-2 border-success" onclick="closeFunction()" value="Close"></label>
-        
-        
+        <label for="" class="pt-2"><input type="submit" class="py-2 ms-5 px-3 rounded-2 border-success"
+                onclick="addFunction()" value="Add"><input type="button" class="py-2 px-3 ms-5 rounded-2 border-success"
+                onclick="closeFunction()" value="Close"></label>
+
+
 
     </div>
 </body>
 <script src="./js/class.js"></script>
+<script src="./js/login.js"></script>
 <script src="./js/main.js"></script>
 
 

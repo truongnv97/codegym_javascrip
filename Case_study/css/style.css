@@ -6,13 +6,15 @@
 }
 
 #page-fix {
+  display: none;
   position: fixed;
   top: 50vh;
   left: -70px;
   z-index: 10;
 }
 
-#page-fix .lv1, #page-fix .lv2 {
+#page-fix .lv1,
+#page-fix .lv2 {
   position: relative;
   list-style-type: none;
   font-size: 16px;
@@ -74,7 +76,8 @@ a {
 }
 
 h1,
-h2, h4 {
+h2,
+h4 {
   font-family: "Angeline_Vintage";
   color: #fff;
 }
@@ -94,7 +97,7 @@ body > hr {
   color: inherit;
   background-color: currentColor;
   border: 0;
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .head-page .fa-solid {
@@ -185,7 +188,100 @@ body > hr {
   padding: 0 100px;
 }
 
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.search .icon {
+  overflow: hidden;
+}
+
+.search .icon .fa-solid,
+.search .icon .fas {
+  font-size: 20px;
+  color: #fff;
+  padding-right: 8px;
+}
+
+.search .icon #cart-list-display {
+  display: none;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: 30%;
+  left: 10%;
+  top: 100px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.search .icon #cart-list-display img {
+  margin: 8px 6px;
+  width: 60px;
+  height: 60px;
+}
+
+.search .icon #cart-list-display .title {
+  margin: 8px 12px;
+  color: #000;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipse;
+  overflow: hidden;
+}
+
+.search .icon #cart-list-display .money {
+  margin: 8px 12px;
+}
+
+.search .icon #cart-list-display .cart-button {
+  background-color: #ff5dab;
+  border-radius: 4px;
+  padding: 6px 8px;
+  border: none;
+  margin: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+
+.search .icon #cart-list-display .cart-button a {
+  color: #fff;
+}
+
+.search .icon #cart-list-display .cart-button:hover {
+  opacity: 0.8;
+}
+
+.search .icon #cart-list-display .cart-list-item:hover {
+  background-color: #f3eaea;
+}
+
+.search .icon:hover {
+  color: #ddd;
+}
+
+.search .icon:hover i {
+  color: #ddd;
+}
+
+.search .translate-middle {
+  color: #fff;
+}
+
+.search .icon1:hover #cart-list-display {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.input-group
+> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin: 0;
 }
 
@@ -197,25 +293,6 @@ body > hr {
 
 .input-group-text {
   cursor: pointer;
-}
-
-.icon .fa-solid,
-.icon .fas {
-  font-size: 20px;
-  color: #fff;
-  padding-right: 8px;
-}
-
-.icon:hover {
-  color: #ddd;
-}
-
-.icon:hover i {
-  color: #ddd;
-}
-
-.translate-middle {
-  color: #fff;
 }
 
 #slider {
@@ -731,7 +808,8 @@ footer .logo {
   border-collapse: collapse;
 }
 
-#cart table th, #cart table td {
+#cart table th,
+#cart table td {
   border-bottom: 1px solid #cbc;
 }
 
@@ -844,4 +922,72 @@ tbody .line th {
 
 #add-product .width-w {
   min-width: 200px;
+}
+
+#login-wrap {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#login-wrap h1 {
+  font-size: 60px;
+  color: #554149;
+}
+
+#login-wrap h2 {
+  font-family: "Montserrat-Bold";
+  color: #1b1719;
+}
+
+#login-image img {
+  max-width: 60%;
+  margin-top: 50px;
+}
+
+#login-box {
+  width: 30vw;
+  height: 75vh;
+  margin-top: 100px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 28px;
+}
+
+#login-box label {
+  width: 90%;
+  margin: 12px 5% 0;
+}
+
+#login-box label input {
+  width: 100%;
+  height: 36px;
+  border: thin solid #ddd;
+  border-radius: 6px;
+  padding: 0 12px;
+}
+
+#login-box label p {
+  margin-bottom: 8px;
+}
+
+#login-box button {
+  width: 100%;
+  font-size: 16px;
+  border: thin solid #ddd;
+  border-radius: 16px;
+  padding: 8px 12px;
+  margin-top: 16px;
+  background-color: #ff5dab;
+  color: #fff;
+}
+
+#login-box .login-social a {
+  font-size: 20px;
+  color: #ff5dab;
+}
+
+#login-box a {
+  color: #ff5dab;
 }
